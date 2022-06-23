@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @Html.TextBox("disp", (string)@ViewBag.Nombre, new{@readonly = true})
+    @ViewBag.Edad
+    @ViewBag.Vivo
+
+    @Html.CheckBox("vivo",(bool)@ViewBag.Vivo)
+    <br />
+
+    <div>
+    SKU: @Html.TextBox("disp", (string)@ViewBag.Camion.SKU, new{@readonly = true})
+    <br />
+
+    NoSerie: @Html.TextBox("disp", (string)@ViewBag.Camion.NoSerie, new{@readonly = true})
+    <br />
+    
+    Puertas: @Html.TextBox("disp", (int)@ViewBag.Camion.Puertas, new{@readonly = true})
+    <br />
+
+    Ruedas: @Html.TextBox("disp", (int)@ViewBag.Camion.Ruedas, new{@readonly = true})
+    <br />
+
+    TipoCaja: @Html.TextBox("disp", (string)@ViewBag.Camion.TipoCaja.ToString(), new{@readonly = true})
+    <br />
+
+    TamañoCaja: @Html.TextBox("disp", (int)@ViewBag.Camion.TamañoCaja, new{@readonly = true})
+    <br />
+    </div>
+</div>
