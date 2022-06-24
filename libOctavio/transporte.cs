@@ -1,4 +1,6 @@
-﻿namespace libOctavio
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace libOctavio
 {
     public enum TipoCaja
     {
@@ -8,6 +10,7 @@
 
     public class Carro
     {
+        [Key]
         public string SKU { get; set; }
         public int Ruedas { get; set; }
         public int Puertas { get; set; }

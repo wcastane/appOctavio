@@ -20,23 +20,17 @@ else
 
 Camion camion123 = new Camion { SKU = "CAM123", Puertas = 2, Ruedas = 6, TipoCaja = TipoCaja.CajaSeca, TamañoCaja = 48 };
 
-//using (var db = new CarrosDB())
-//{
-//    db.Carros.Add(ibiza);
-//    db.SaveChanges();
-//}
+using (var db = new CarrosDB())
+{
+    db.Carros.Add(ibiza);
+    db.SaveChanges();
+}
 
 
-//class CarrosDB : DbContext
-//{
-//    public DbSet<Carro> Carros { get; set; }
+class CarrosDB : DbContext
+{
+    public DbSet<Carro> Carros { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder options)
-//    => options.("DataSource=app.db");
-
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//    {
-//        optionsBuilder .UseSqlServer(
-//            @"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True");
-//    }
-//}
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarrosDb;Trusted_Connection=True");
+}
